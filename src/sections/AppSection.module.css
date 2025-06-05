@@ -1,0 +1,16 @@
+.appSection {
+  background: #fff !important;
+  color: #222;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .appSection {
+    padding: 1.3rem;
+    flex-direction: column; 
+    align-items: stretch;
+  }
+}
