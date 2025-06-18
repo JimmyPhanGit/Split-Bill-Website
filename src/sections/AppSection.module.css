@@ -7,10 +7,126 @@
   text-align: left;
 }
 
+input::placeholder {
+  color: #888 !important;
+  opacity: 1; 
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.formAndReceipt {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.formWrapper {
+  flex: 1;
+  max-width: 500px; 
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.receiptPreview {
+  flex: 1;
+  max-width: 350px; 
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.receiptPaper {
+  width: 260px;
+  min-height: 340px;
+  background: #faf9f6;
+  border: 2px dashed #d1d5db;
+  border-radius: 16px 16px 40px 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+}
+
+.receiptName {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  min-height: 2.2em;
+  letter-spacing: 1px;
+  color: #222;
+  overflow: hidden;
+  word-break: break-word; 
+}
+
+.typing {
+  display: inline;
+  border-right: 2px solid #222;
+  animation: blink-caret 0.7s step-end infinite;
+  word-break: break-word;
+}
+
+.noCaret {
+  border-right: none !important;
+  animation: none !important;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #222; }
+}
+
+.receiptPeople {
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: #444;
+}
+
+.receiptFooter {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  color: #444;
+  border-top: 1px dashed #d1d5db;
+  padding-top: 1.2rem;
+  margin-top: 2rem;
+}
+
+/* Responsive: stack on mobile */
 @media (max-width: 768px) {
-  .appSection {
-    padding: 1.3rem;
-    flex-direction: column; 
+  .formAndReceipt {
+    flex-direction: column;
     align-items: stretch;
+  }
+  .receiptPreview {
+    margin-top: 2rem;
+    justify-content: center;
   }
 }

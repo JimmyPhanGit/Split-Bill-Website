@@ -37,8 +37,10 @@ const TextField: React.FC<TextFieldProps> = ({
       required={required}
       style={{
         width: "100%",
-        background: "#f3f3f3", // Light gray background
-        border: "1px solid #ccc", // Optional: subtle border
+        background: "white", 
+        border: "1px solid #ccc", 
+        padding: "0.7rem 1rem",
+        borderRadius: "4px",
       }}
       />
   </div>
