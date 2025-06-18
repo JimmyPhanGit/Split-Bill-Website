@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import styles from './AppSection.module.css';
+import styles from './FormAndReceiptSection.module.css';
 import TextField from '../components/TextField';
 import Button from '../components/Button';
 
+interface FormAndReceiptSectionProps {
+  onSubmit: (data: any) => void;
+}
 
-const AppSection = () => {
+const FormAndReceiptSection: React.FC<FormAndReceiptSectionProps> = ({ onSubmit }) => {
   const [receiptName, setReceiptName] = useState('');
   const [tip, setTip] = useState('');
   const [tax, setTax] = useState('');
@@ -14,7 +17,7 @@ const AppSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ receiptName, tip, tax, numPeople });
+    onSubmit({ receiptName, tip, tax, numPeople });
   };
 
   useEffect(() => {
@@ -26,7 +29,7 @@ const AppSection = () => {
       setTypedReceiptName(receiptName.slice(0, i + 1));
       i++;
       if (i === receiptName.length) clearInterval(interval);
-    }, 120); // slower typing speed
+    }, 120); 
 
     return () => clearInterval(interval);
   }, [receiptName]);
@@ -58,6 +61,7 @@ const AppSection = () => {
             value={tip}
             onChange={e => setTip(e.target.value)}
             type="number"
+            required
           />
           <TextField
             label="Tax %"
@@ -65,6 +69,7 @@ const AppSection = () => {
             value={tax}
             onChange={e => setTax(e.target.value)}
             type="number"
+            required
           />
           <TextField
             label="Number of People"
@@ -72,6 +77,7 @@ const AppSection = () => {
             value={numPeople}
             onChange={e => setNumPeople(e.target.value)}
             type="number"
+            required
           />
           <div className={styles.buttonWrapper}>
             <Button type="submit" variant="primary">
@@ -83,7 +89,7 @@ const AppSection = () => {
           <div className={styles.receiptPaper}>
             <div className={styles.receiptName}>
               <span className={`${styles.typing} ${!isCaretBlinking ? styles.noCaret : ''}`}>
-                {typedReceiptName || "Receipt Name"}
+                {typedReceiptName !== '' ? typedReceiptName : (receiptName ? '' : "Receipt Name")}
               </span>
             </div>
             <div className={styles.receiptPeople}>
@@ -100,4 +106,4 @@ const AppSection = () => {
   );
 };
 
-export default AppSection;
+export default FormAndReceiptSection;
