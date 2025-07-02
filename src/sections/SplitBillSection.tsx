@@ -146,7 +146,6 @@ const SplitBillSection: React.FC<SplitBillSectionProps> = ({ formData, onBack })
             </div>
             <div className={styles.receiptPeopleList}>
               {people.map((person, i) => {
-                const subtotal = getPersonSubtotal(person);
                 const tip = getPersonTip(person);
                 const tax = getPersonTax(person);
                 const total = getPersonTotal(person);
@@ -200,7 +199,6 @@ const SplitBillSection: React.FC<SplitBillSectionProps> = ({ formData, onBack })
           type="button"
           variant="secondary"
           onClick={onBack}
-          className={styles.backButton}
         >
           Back
         </Button>
