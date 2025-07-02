@@ -200,7 +200,6 @@ const SplitBillSection: React.FC<SplitBillSectionProps> = ({ formData, onBack })
           type="button"
           variant="secondary"
           onClick={onBack}
-          className={styles.backButton}
         >
           Back
         </Button>
