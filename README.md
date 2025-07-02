@@ -1,54 +1,20 @@
-# React + TypeScript + Vite
+**Split Bill Website**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Overview**
 
-Currently, two official plugins are available:
+Split Bill Website is a modern web application designed to make splitting group bills fast, fair, and easy. As more restaurants and venues move to a "one bill per table" policy—often for credit card points or operational efficiency—this tool helps automate the process of dividing costs among friends, family, or colleagues.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project was inspired by my own day-to-day experiences: I often find myself picking up the bill and then manually calculating what everyone owes, including tip and tax. This app streamlines that process, saving time and reducing errors.
 
-## Expanding the ESLint configuration
+**Features**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Dynamic Bill Splitting: Enter the total number of people, and the app generates sections for each person.
+Custom Names & Items: Assign names and add as many items as needed for each individual.
+Automatic Calculations: Tip and tax are calculated per person and for the entire bill.
+Receipt Preview: See a real-time, itemized receipt that updates as you enter information.
+Mobile Friendly: Responsive design for use on any device.
+Easy Adjustments: Add or remove items, change names, and instantly see updated totals.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+**Why I Built This**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+With the rise of single-bill policies and the desire to maximize credit card rewards, splitting bills has become a regular part of my social life. This tool automates a task I do almost every day, making it easier for everyone at the table to see exactly what they owe.
