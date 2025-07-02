@@ -1,0 +1,265 @@
+.appSection {
+  background: #fff !important;
+  color: #222;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  text-align: left;
+}
+
+input::placeholder {
+  color: #888 !important;
+  opacity: 1; 
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.formAndReceipt {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.formWrapper {
+  flex: 1;
+  max-width: 500px; 
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.receiptPreview {
+  flex: 1;
+  max-width: 350px; 
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.receiptPaper {
+  width: 100%;
+  min-width: 180px;
+  background: #faf9f6;
+  border: 2px dashed #d1d5db;
+  border-radius: 16px 16px 40px 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 2rem 1rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.receiptName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #222;
+  text-align: center;
+}
+
+.typing {
+  display: inline;
+  border-right: 2px solid #222;
+  animation: blink-caret 0.7s step-end infinite;
+  word-break: break-word;
+}
+
+.noCaret {
+  border-right: none !important;
+  animation: none !important;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #222; }
+}
+
+.receiptPeople {
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: #444;
+}
+
+.receiptPeopleList {
+  margin-bottom: 1.5rem;
+}
+
+.receiptPerson {
+  margin-bottom: 1rem;
+}
+
+.receiptFooter {
+  border-top: 1px dashed #d1d5db;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.splitBillWrapper {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.peopleInputs {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.personSection {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.personNameInput {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+}
+
+.itemRow {
+  margin-bottom: 0.5rem;
+}
+
+.itemRowFlex {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.itemNameWrapper {
+  flex: 3 1 0%; 
+}
+
+.itemPriceWrapper {
+  flex: 0 0 80px; 
+  max-width: 80px;
+}
+
+.itemInput {
+  width: 90%;
+  padding: 0.4rem;
+}
+
+.addItemButton {
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+.addItemButton:hover,
+.addItemButton:focus {
+  background: #1746b3;
+}
+
+.priceInput {
+  width: 80px;
+  margin-left: 0.5rem;
+  padding: 0.4rem;
+}
+
+.receiptBreakdown {
+  margin-top: 0.5rem;
+  padding-left: 0;
+  font-size: 0.98rem;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.breakdownRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.breakdownValue {
+  min-width: 60px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px) {
+  .formAndReceipt {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .splitBillWrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .receiptPreview {
+    margin-top: 2rem;
+    justify-content: center;
+    max-width: 100%;
+  }
+  .peopleInputs {
+    max-width: 100%;
+  }
+  .receiptPaper {
+    width: 100%;
+    min-width: 0;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  .itemRowFlex {
+    flex-wrap: nowrap;
+  }
+  .itemNameWrapper {
+    flex: 2 1 0%;   
+    min-width: 0;   
+  }
+  .itemPriceWrapper {
+    flex: 0 1 60px; 
+    max-width: 60px;
+    min-width: 50px;
+  }
+  .itemInput {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.backButton {
+  margin-top: 1.5rem;
+  width: 100%;
+  display: block;
+}
