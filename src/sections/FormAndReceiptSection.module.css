@@ -25,10 +25,6 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-top: 1rem;
 }
 
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
 .formAndReceipt {
   display: flex;
   gap: 2.5rem;
@@ -44,7 +40,6 @@ input[type="number"] {
   flex-direction: column;
   align-items: flex-start;
 }
-
 
 .receiptPreview {
   flex: 1;
@@ -79,6 +74,7 @@ input[type="number"] {
   color: #222;
   overflow: hidden;
   word-break: break-word; 
+  text-align: center;
 }
 
 .typing {
@@ -119,7 +115,7 @@ input[type="number"] {
   margin-top: 2rem;
 }
 
-/* Responsive: stack on mobile */
+
 @media (max-width: 768px) {
   .formAndReceipt {
     flex-direction: column;

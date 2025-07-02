@@ -20,7 +20,7 @@ function App() {
         <FormAndReceiptSection onSubmit={handleFormSubmit} />
       )}
       {step === 2 && formData && (
-        <SplitBillSection formData={formData} />
+        <SplitBillSection formData={formData} onBack={() => setStep(1)} />
       )}
     </div>
   )
