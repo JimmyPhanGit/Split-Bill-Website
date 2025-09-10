@@ -15,7 +15,7 @@ interface SplitBillSectionProps {
 
 interface Item {
   name: string;
-  price: string; 
+  price: string;
 }
 
 interface Person {
@@ -40,11 +40,11 @@ const SplitBillSection: React.FC<SplitBillSectionProps> = ({ formData, onBack })
       prev.map((person, i) =>
         i === personIdx
           ? {
-              ...person,
-              items: person.items.map((item, j) =>
-                j === itemIdx ? { ...item, name: value } : item
-              ),
-            }
+            ...person,
+            items: person.items.map((item, j) =>
+              j === itemIdx ? { ...item, name: value } : item
+            ),
+          }
           : person
       )
     );
@@ -55,11 +55,11 @@ const SplitBillSection: React.FC<SplitBillSectionProps> = ({ formData, onBack })
       prev.map((person, i) =>
         i === personIdx
           ? {
-              ...person,
-              items: person.items.map((item, j) =>
-                j === itemIdx ? { ...item, price: value } : item
-              ),
-            }
+            ...person,
+            items: person.items.map((item, j) =>
+              j === itemIdx ? { ...item, price: value } : item
+            ),
+          }
           : person
       )
     );
@@ -195,13 +195,6 @@ const SplitBillSection: React.FC<SplitBillSectionProps> = ({ formData, onBack })
             </div>
           </div>
         </div>
-        <Button
-          type="button"
-          variant="secondary"
-          onClick={onBack}
-        >
-          Back
-        </Button>
       </div>
     </section>
   );
