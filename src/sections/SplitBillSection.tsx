@@ -23,7 +23,7 @@ interface Person {
   items: Item[];
 }
 
-const SplitBillSection: React.FC<SplitBillSectionProps> = ({ formData, onBack }) => {
+const SplitBillSection: React.FC<SplitBillSectionProps> = ({ formData }) => {
   const numPeople = parseInt(formData.numPeople, 10) || 1;
   const [people, setPeople] = useState<Person[]>(
     Array.from({ length: numPeople }, () => ({ name: '', items: [{ name: '', price: '' }] }))
